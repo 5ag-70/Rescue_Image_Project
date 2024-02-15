@@ -1,0 +1,20 @@
+{
+    "builders": [
+    {
+      "type": "openstack",
+      "image_name": "rescue_image_ubuntu",
+      "source_image_name": "dcs-ubuntu-2004.0.202311021650",
+      "image_visibility": "public",
+      "flavor": "your_instance_flavor",
+      "ssh_username": "root",
+      "skip_create_image": "true",
+      "temporary_key_pair_type": "ed25519"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": "sudo apt-get update"
+    }
+  ]
+}
